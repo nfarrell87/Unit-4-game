@@ -1,0 +1,26 @@
+.jumbotron {    
+    background-color: transparent;
+    text-align: center;
+    color: white;
+	font-size: 20px;
+	text-shadow: -1px 1px 2px #000,
+				  1px 1px 2px #000,
+				  1px -1px 0 #000,
+				  -1px -1px 0 #000;
+    
+}
+body {
+    background-image: url("https://cdna.artstation.com/p/assets/images/images/014/807/318/large/brea-foster-dota-2-bg.jpg?1545613398");
+}
+button {
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+.img {
+    height: 150px;
+    width: 150px;
+    align-self: center;
+    margin-left: auto 0;
+    margin-right: auto 0;
+}

@@ -16,6 +16,20 @@ var rune2 = Math.floor(Math.random() * (12 - 1) + 1);
 var rune3 = Math.floor(Math.random() * (12 - 1) + 1);
 var rune4 = Math.floor(Math.random() * (12 - 1) + 1);
 
+
+//reset the game
+function reset(){
+    targetScore = Math.floor(Math.random() * (120 - 19) + 19);
+    rune1 = Math.floor(Math.random() * (12 - 1) + 1);
+    rune2 = Math.floor(Math.random() * (12 - 1) + 1);
+    rune3 = Math.floor(Math.random() * (12 - 1) + 1);
+    rune4 = Math.floor(Math.random() * (12 - 1) + 1);
+    currentScore = 0
+    $(".showCurrentScore").text("Current Score: " + currentScore);
+    $(".showTargetScore").text("Target Score: " + targetScore);
+    start(); 
+}
+
 //start the game
 function start(){
     //Assign each rune a random value generated above and do not display to user
@@ -23,15 +37,37 @@ function start(){
     $(".illuRune").attr("value", rune2);
     $(".regenRune").attr("value", rune3);
     $(".ddrune").attr("value", rune4);
+    //set current score to 0 and display current score to user
+    currentScore = 0
+    $(".showCurrentScore").text("Current Score: " + currentScore)
     //Generate target score between 19-120 and display to user
     targetScore = Math.floor(Math.random() * (120 - 19) + 19);
-    $(".showTargetScore").text(targetScore);
+    $(".showTargetScore").text("Target Score: " + targetScore);
 
 
     //When clicking a rune, add it's current random value to current score
-    $(".rune").on("click", function() {
-        currentScore = parseInt(currentScore);
-        console.log(currentScore);
-    })
+    $(".rune").off().on("click", function() {
+        //add value of clicked run to current score total when clicked
+        var addRune = $(this).attr("value");
+        currentScore = parseInt(currentScore) + parseInt(addRune)
+        //refresh/display current score to user
+        $(".showCurrentScore").text("Current Score: " + currentScore);
+
+        if (targetScore === currentScore) {
+            alert("You Won!");
+            wins++;
+            $(".totalWins").text("Total Wins: " + wins);
+            $(".showCurrentScore").text("Current Score: 0");
+            reset();
+
+        }else if (currentScore > targetScore) {
+            alert("You lost!");
+            loses++;
+            $(".totalLosses").text("Total Losses: " + loses);
+            $(".showCurrentScore").text("Current score: 0");
+            reset();
+        }
+
+    });
 }
 start()
