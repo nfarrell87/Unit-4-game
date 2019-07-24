@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>DOTA runes mini-game</title>
+  </head>
+  <body>
+    <h1>Welcome to my DOTA runes mini-game</h1>
+    <div class="jumbotron">
+        <h1 class="display-4">The Rules:</h1>
+        <p class="lead">You will be given a random number at the start of the game.</p>
+        <p class="lead">There are four runes below. By clicking on a rune you will add a specific amount of points to your total score.</p>
+        <p class="lead">You win the game by matching your total score to the random number, you lose the game if your total score goes above the random number.</p>
+        <p class="lead">The value of each rune is hidden from you until you click on it.</p>
+        <p class="lead">Each time when the game starts, the game will change the values of each rune.</p>
+        <hr class="my-4">
+        <div id="totalWins"><h5>Total Wins: 0</h5></div>
+        <div id="totalLosses"><h5>Total Losses: 0</h5></div>
+        <div id="showCurrentScore"><h5>Target Score: </h5></div>
+        <div id="showTargetScore"><h5>Current Score: </h5></div>
+      </div>
+    <div class="rune"></div>
+    <button type="button" class="rune hasteRune" value="1"> <img src="assets/images/Rune_of_Haste.png"></button>
+    <button type="button" class="rune illuRune" value="2"> <img src="assets/images/Rune_of_Illusion.png"></button>
+    <button type="button" class="rune regenRune" value="3"> <img src="assets/images/Rune_of_Regeneration.png"></button>
+    <button type="button" class="rune ddRune" value="4"> <img src="assets/images/Rune_of_Double_Damage.png" style="width: 144%"></button>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="assets/javascript/game.js"></script>
+  </body>
+</html>
